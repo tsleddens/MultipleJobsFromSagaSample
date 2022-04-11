@@ -3,7 +3,6 @@ using Hangfire;
 using Hangfire.MemoryStorage;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MultipleJobsFromSagaSample;
 

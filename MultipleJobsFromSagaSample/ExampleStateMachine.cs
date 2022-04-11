@@ -25,8 +25,8 @@ internal class ExampleStateMachine : MassTransitStateMachine<ExampleState>
 
         Initially(
             When(ExecuteExampleJob1Triggered)
-                .Then(x => x.Saga.ExampleJob1Id = new Guid())
-                .Then(x => x.Saga.ExampleJob2Id = new Guid())
+                .Then(x => x.Saga.ExampleJob1Id = NewId.NextGuid())
+                .Then(x => x.Saga.ExampleJob2Id = NewId.NextGuid())
                 .Request(ExampleJob1, x => x.Init<ExampleJob1>(new { JobId = x.Saga.ExampleJob1Id }))
                 .TransitionTo(ExampleJob1.Pending)
         );
